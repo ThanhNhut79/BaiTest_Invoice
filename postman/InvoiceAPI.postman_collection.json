@@ -1,0 +1,223 @@
+{
+    "info": {
+        "name": "Invoice API",
+        "_postman_id": "b4b0d29a-53f4-4c7b-b7ef-1e9b80c6ef00",
+        "description": "Postman Collection để test Invoice API",
+        "schema": "[https://schema.getpostman.com/json/collection/v2.1.0/collection.json](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)"
+    },
+    "item": [
+        {
+            "name": "Create Invoice (Draft)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{ \"number\": \"INVOICE-01\", \"totalCents\": 150000 }"
+                },
+                "url": {
+                    "raw": "http://localhost:4000/invoices",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Invoices",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:4000/invoices",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Invoice by ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:4000/invoices/{{id}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices",
+                        "{{id}}"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Invoice",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{ \"totalCents\": 200000 }"
+                },
+                "url": {
+                    "raw": "http://localhost:4000/invoices/{{id}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices",
+                        "{{id}}"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Invoice",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:4000/invoices/{{id}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices",
+                        "{{id}}"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Issue Invoice",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4000/invoices/{{id}}/issue",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices",
+                        "{{id}}",
+                        "issue"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Cancel Invoice",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4000/invoices/{{id}}/cancel",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices",
+                        "{{id}}",
+                        "cancel"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Replace Invoice",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{ \"number\": \"INVOICE-01\", \"totalCents\": 180000 }"
+                },
+                "url": {
+                    "raw": "http://localhost:4000/invoices/{{id}}/replace",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices",
+                        "{{id}}",
+                        "replace"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Generate PDF",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:4000/invoices/{{id}}/generate-pdf",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices",
+                        "{{id}}",
+                        "generate-pdf"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Download PDF",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:4000/invoices/{{id}}/pdf",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "invoices",
+                        "{{id}}",
+                        "pdf"
+                    ]
+                }
+            }
+        }
+    ]
+}
